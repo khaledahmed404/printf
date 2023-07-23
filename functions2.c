@@ -73,14 +73,14 @@ int print_pointer(va_list types, char buffer[], int flags,
 
 	UNUSED(size);
 
-	if (addrs == NULL)
+	if (str == NULL)
 		return (write(1, "(nil)", 5));
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	UNUSED(precision);
 
-	num_addrs = (unsigned long)addrs;
+	num_addrs = (unsigned long)str;
 	while (num_addrs > 0)
 	{
 		buffer[ind--] = map[num_addrs % 16];
